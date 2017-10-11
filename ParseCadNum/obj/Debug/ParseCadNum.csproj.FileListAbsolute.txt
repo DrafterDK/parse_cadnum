@@ -12,3 +12,6 @@ c:\users\владимир сергеевич\documents\visual studio 2017\Projec
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.csproj.GenerateResource.Cache
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.exe
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.pdb
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\System.Net.Http.dll
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\System.Net.Http.xml
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\ru\System.Net.Http.resources.dll
