@@ -23,6 +23,13 @@ namespace ParseCadNum
     public partial class MainWindow : Window
     {
         List<string> Parcel = new List<string>();
+        List<string> LOks = new List<string>();
+        List<string> LUn = new List<string>();
+        List<string> LFlat = new List<string>();
+        List<string> LCnst = new List<string>();
+        string FileName = "test";
+        int Count;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -64,7 +71,7 @@ namespace ParseCadNum
         }
         private void ParseFile (string FilePatch)
         {
-            string FileName = "test";
+           
             var doc = new XmlDocument();
             {
                 doc.Load(FilePatch);
@@ -94,8 +101,7 @@ namespace ParseCadNum
                                 }
                               //  FileInfo fi1 = new FileInfo(FileName + ".txt");
                                 StreamWriter ZU = new StreamWriter(FileName + "_ЗУ.txt");
-                                StreamWriter OKS = new StreamWriter(FileName + "_ОКС.txt");
-                                StreamWriter UN = new StreamWriter(FileName + "_НД.txt");
+                                listBoxCreate.Items.Add(FileName + "_ЗУ.txt");
 
                                 foreach (XmlNode n2 in n1.ChildNodes)
                                 {
@@ -111,29 +117,16 @@ namespace ParseCadNum
                                                 {
                                                     if (A1.Name == "CadastralNumber")
                                                     {
-                                                       
-                                                        //if (i <= 50)
-                                                        //{
-                                                            if (i == 50)
-                                                            {
-                                                                listBoxCreate.Items.Add(A1.Value);
-                                                                ZU.WriteLine(A1.Value);
+                                                        if (i == 50)
+                                                        {                                                          
+                                                            ZU.WriteLine(A1.Value);
                                                             i = 0;
                                                         }
-                                                            else
-                                                            {
-                                                                listBoxCreate.Items.Add(A1.Value);
-                                                                ZU.Write(A1.Value + ";");
-                                                            }
-                                                        //}
-                                                        //else
-                                                        //{
-                                                        //    listBoxCreate.Items.Add(A1.Value);
-                                                        //    ZU.WriteLine(A1.Value + ";");
-                                                        //    i = 0;
-                                                        //}
-                                                        listBoxCreate.Items.Add(A1.Value);
-                                                        Parcel.Add(A1.Value);
+                                                        else
+                                                        {                                                          
+                                                            ZU.Write(A1.Value + ";");
+                                                        }
+                                                        Count++;                                                       
                                                     }
                                                 }
                                             }
@@ -141,7 +134,6 @@ namespace ParseCadNum
                                     ZU.Close();
                                     }
                                     
-
                                     if (n2.Name == "ObjectsRealty")
                                     {
                                         foreach (XmlNode n3 in n2.ChildNodes)
@@ -151,60 +143,60 @@ namespace ParseCadNum
                                                 foreach (XmlNode n4 in n3.ChildNodes)
                                                 {
                                                     if (n4.Name == "Building")
-                                                    {
-                                                        listBoxCreate.Items.Add("Building");
+                                                    {                                                       
                                                         foreach (XmlAttribute A2 in n4.Attributes)
                                                         {
                                                             if (A2.Name == "CadastralNumber")
                                                             {
-                                                                listBoxCreate.Items.Add(A2.Value);
-                                                                OKS.Write(A2.Value + ";");
+                                                                LOks.Add(A2.Value );
+                                                                Count++;
                                                             }
                                                         }
                                                     }
 
                                                     if (n4.Name == "Uncompleted")
-                                                    {
-                                                        listBoxCreate.Items.Add("Uncompleted");
+                                                    {                                                       
                                                         foreach (XmlAttribute A2 in n4.Attributes)
                                                         {
                                                             if (A2.Name == "CadastralNumber")
                                                             {
-                                                                listBoxCreate.Items.Add(A2.Value);
-                                                                UN.Write(A2.Value +";");
+                                                                LUn.Add(A2.Value);
+                                                                Count++;
                                                             }
                                                         }
                                                     }
-
-
-                                                }
-
-
-
-
-
-
-
-
+                                                    if (n4.Name == "Flat")
+                                                    {
+                                                        listBoxCreate.Items.Add("Flat");
+                                                        foreach (XmlAttribute A2 in n4.Attributes)
+                                                        {
+                                                            if (A2.Name == "CadastralNumber")
+                                                            {
+                                                                LFlat.Add(A2.Value);
+                                                                Count++;
+                                                            }
+                                                        }
+                                                    }
+                                                    if (n4.Name == "Construction")
+                                                    {
+                                                        listBoxCreate.Items.Add("Construction");
+                                                        foreach (XmlAttribute A2 in n4.Attributes)
+                                                        {
+                                                            if (A2.Name == "CadastralNumber")
+                                                            {
+                                                                LCnst.Add(A2.Value);
+                                                                Count++;
+                                                            }
+                                                        }
+                                                    }
+                                                }                                                
                                             }
                                         }
-                                    }
-
-                                        
-                                    
-                                }
-                                
+                                    }  
+                                }                                
                             }
                         }
-
-                    }
-                    //foreach (XmlNode child in node.ChildNodes)
-                    //{
-
-                    //}
-                    //Debug.WriteLine(string.Format("{0} = {1}", child.Name, child.InnerText));
-                    //Debug.WriteLine("--------------");
-
+                    }                    
                 }
             }
         }
@@ -213,9 +205,99 @@ namespace ParseCadNum
         {
             foreach (string name in listBoxChange.Items)
             {
-                ParseFile(name);
-               // for
+               ParseFile(name);
+               if (LOks.Count != 0)
+                {
+                    int i = 0;
+                     StreamWriter FOks = new StreamWriter(FileName + "_ОКС.txt");
+                    listBoxCreate.Items.Add(FileName + "_ОКС.txt");
+                    foreach (string OKS in LOks)
+                    {
+                        if (i == 50)
+                        {
+                            FOks.WriteLine(OKS);
+                            i = 0;
+                        }
+                        else
+                        {
+                            FOks.Write(OKS + ";");
+                        }
+
+                        i++;
+                    }
+                    FOks.Close();
+                }
+                if (LUn.Count != 0)
+                {
+                    int i = 0;
+                    StreamWriter Fun = new StreamWriter(FileName + "_НД.txt");
+                    listBoxCreate.Items.Add(FileName + "_НД.txt");
+                    foreach (string Un in LUn)
+                    {
+                        if (i == 50)
+                        {
+                            Fun.WriteLine(Un);
+                            i = 0;
+                        }
+                        else
+                        {
+                            Fun.Write(Un + ";");
+                        }
+
+                        i++;
+                    }
+                    Fun.Close();                    
+                }
+                if (LFlat.Count != 0)
+                {
+                    int i = 0;
+                    StreamWriter FFlat = new StreamWriter(FileName + "_КВ.txt");
+                    listBoxCreate.Items.Add(FileName + "_КВ.txt");
+                    foreach (string Flat in LFlat)
+                    {
+                        if (i == 50)
+                        {
+                            FFlat.WriteLine(Flat);
+                            i = 0;
+                        }
+                        else
+                        {
+                            FFlat.Write(Flat + ";");
+                        }
+
+                        i++;
+                    }
+                    FFlat.Close();
+                }
+                if (LCnst.Count != 0)
+                {
+                    int i = 0;
+                    StreamWriter FCnstr = new StreamWriter(FileName + "_СР.txt");
+                    listBoxCreate.Items.Add(FileName + "_СР.txt");
+                    foreach (string Cnstr in LCnst)
+                    {
+                        if (i == 50)
+                        {
+                            FCnstr.WriteLine(Cnstr);
+                            i = 0;
+                        }
+                        else
+                        {
+                            FCnstr.Write(Cnstr + ";");
+                        }
+
+                        i++;
+                    }
+                    FCnstr.Close();
+                }
+
+                LOks.Clear();
+                LUn.Clear();
+                LFlat.Clear();
+                LCnst.Clear();
             }
+            CountCad.Visibility = Visibility.Visible;
+            CountCad.Content = "Получено кадастровых номеров: " + Count;
         }
         private static string Replace(string input, IEnumerable<char> except)
         {
