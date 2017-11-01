@@ -182,20 +182,32 @@ namespace ParseCadNum
 
         private void ButtonChangeFile_Copy_Click(object sender, RoutedEventArgs e)
         {
+          
             foreach (string name in listBoxChange.Items)
             {
-               ParseFile(name);
-               if (LZu.Count != 0)
+                listBoxCreate.Items.Add("*** Результаты разбора файла : " + name + " в " + DateTime.Now +" ***");
+                ParseFile(name);
+                #region ZU
+                if (LZu.Count != 0)
                {
                     int i = 0;
                     int j = 0;
-                    StreamWriter FZu = new StreamWriter(FileName + "_ЗУ.txt");
-                    listBoxCreate.Items.Add(FileName + "_ЗУ.txt");
+                    int n = 1;
+                    StreamWriter FZu = new StreamWriter(FileName + "_ЗУ_"+n+".txt");
+                    listBoxCreate.Items.Add(FileName + "_ЗУ_"+n+".txt");
                     foreach (string ZU in LZu)
                     {
                         if (i == 50)
                         {
                             FZu.WriteLine(ZU);
+                            if(CheckBoxVal.IsChecked == true)
+                            {
+                                FZu.Close();
+                                n++;
+                                FZu = new StreamWriter(FileName + "_ЗУ_" + n + ".txt");
+                                listBoxCreate.Items.Add(FileName + "_ЗУ_" + n + ".txt");
+                                
+                            }
                             i = 0;
                         }
                         else
@@ -215,18 +227,189 @@ namespace ParseCadNum
                     }
                     FZu.Close();
                 }
+                #endregion ZU
 
-                if (LOks.Count != 0)
+                if (CheckBoxDel.IsChecked == true)
+                {
+
+                    if (LOks.Count != 0)
+                    {
+                        int i = 0;
+                        int j = 0;
+                        int n = 1;
+                        StreamWriter FOks = new StreamWriter(FileName + "_ОКС_" + n + ".txt");
+                        listBoxCreate.Items.Add(FileName + "_ОКС_" + n + ".txt");
+                        foreach (string OKS in LOks)
+                        {
+                            if (i == 50)
+                            {
+                                FOks.WriteLine(OKS);
+                                if (CheckBoxVal.IsChecked == true)
+                                {
+                                    FOks.Close();
+                                    n++;
+                                    FOks = new StreamWriter(FileName + "_ОКС_" + n + ".txt");
+                                    listBoxCreate.Items.Add(FileName + "_ОКС_" + n + ".txt");
+
+                                }
+                                i = 0;
+                            }
+                            else
+                            {
+                                if (j == LOks.Count() - 1)
+                                {
+                                    FOks.Write(OKS);
+                                }
+                                else
+                                {
+                                    FOks.Write(OKS + ";");
+                                }
+
+                            }
+
+                            i++;
+                            j++;
+                        }
+                        FOks.Close();
+                    }
+                    if (LUn.Count != 0)
+                    {
+                        int i = 0;
+                        int j = 0;
+                        int n = 1;
+                        StreamWriter Fun = new StreamWriter(FileName + "_НД_" + n + ".txt");
+                        listBoxCreate.Items.Add(FileName + "_НД_" + n + ".txt");
+                        foreach (string Un in LUn)
+                        {
+                            if (i == 50)
+                            {
+                                Fun.WriteLine(Un);
+                                if (CheckBoxVal.IsChecked == true)
+                                {
+                                    Fun.Close();
+                                    n++;
+                                    Fun = new StreamWriter(FileName + "_НД_" + n + ".txt");
+                                    listBoxCreate.Items.Add(FileName + "_НД_" + n + ".txt");
+
+                                }
+                                i = 0;
+                            }
+                            else
+                            {
+                                if (j == LUn.Count() - 1)
+                                {
+                                    Fun.Write(Un);
+                                }
+                                else
+                                {
+                                    Fun.Write(Un + ";");
+                                }
+                            }
+
+                            i++;
+                            j++;
+                        }
+                        Fun.Close();
+                    }
+                    if (LFlat.Count != 0)
+                    {
+                        int i = 0;
+                        int j = 0;
+                        int n = 1;
+                        StreamWriter FFlat = new StreamWriter(FileName + "_КВ_" + n + ".txt");
+                        listBoxCreate.Items.Add(FileName + "_КВ_" + n + ".txt");
+                        foreach (string Flat in LFlat)
+                        {
+                            if (i == 50)
+                            {
+                                FFlat.WriteLine(Flat);
+                                if (CheckBoxVal.IsChecked == true)
+                                {
+                                    FFlat.Close();
+                                    n++;
+                                    FFlat = new StreamWriter(FileName + "_КВ_" + n + ".txt");
+                                    listBoxCreate.Items.Add(FileName + "_КВ_" + n + ".txt");
+
+                                }
+                                i = 0;
+                            }
+                            else
+                            {
+                                if (j == LFlat.Count() - 1)
+                                {
+                                    FFlat.Write(Flat);
+                                }
+                                else
+                                {
+                                    FFlat.Write(Flat + ";");
+                                }
+                            }
+
+                            i++;
+                            j++;
+                        }
+                        FFlat.Close();
+                    }
+                    if (LCnst.Count != 0)
+                    {
+                        int i = 0;
+                        int j = 0;
+                        int n = 1;
+                        StreamWriter FCnstr = new StreamWriter(FileName + "_СР_" + n + ".txt");
+                        listBoxCreate.Items.Add(FileName + "_СР_" + n + ".txt");
+                        foreach (string Cnstr in LCnst)
+                        {
+                            if (i == 50)
+                            {
+                                FCnstr.WriteLine(Cnstr);
+                                if (CheckBoxVal.IsChecked == true)
+                                {
+                                    FCnstr.Close();
+                                    n++;
+                                    FCnstr = new StreamWriter(FileName + "_СР_" + n + ".txt");
+                                    listBoxCreate.Items.Add(FileName + "_СР_" + n + ".txt");
+
+                                }
+                                i = 0;
+                            }
+                            else
+                            {
+                                if (j == LCnst.Count() - 1)
+                                {
+                                    FCnstr.Write(Cnstr);
+                                }
+                                else
+                                {
+                                    FCnstr.Write(Cnstr + ";");
+                                }
+                            }
+
+                            i++;
+                            j++;
+                        }
+                        FCnstr.Close();
+                    }
+                }
+                else
                 {
                     int i = 0;
                     int j = 0;
-                    StreamWriter FOks = new StreamWriter(FileName + "_ОКС.txt");
-                    listBoxCreate.Items.Add(FileName + "_ОКС.txt");
+                    int n = 1;
+                    StreamWriter FOks = new StreamWriter(FileName + "_ОКС_" + n + ".txt");
+                    listBoxCreate.Items.Add(FileName + "_ОКС_" + n + ".txt");
                     foreach (string OKS in LOks)
                     {
                         if (i == 50)
                         {
                             FOks.WriteLine(OKS);
+                            if (CheckBoxVal.IsChecked == true)
+                            {
+                                FOks.Close();
+                                n++;
+                                FOks = new StreamWriter(FileName + "_ОКС_" + n + ".txt");
+                                listBoxCreate.Items.Add(FileName + "_ОКС_" + n + ".txt");
+
+                            }
                             i = 0;
                         }
                         else
@@ -239,103 +422,105 @@ namespace ParseCadNum
                             {
                                 FOks.Write(OKS + ";");
                             }
-                           
+
                         }
 
                         i++;
                         j++;
                     }
-                    FOks.Close();
-                }
-                if (LUn.Count != 0)
-                {
-                    int i = 0;
-                    int j = 0;
-                    StreamWriter Fun = new StreamWriter(FileName + "_НД.txt");
-                    listBoxCreate.Items.Add(FileName + "_НД.txt");
                     foreach (string Un in LUn)
                     {
                         if (i == 50)
                         {
-                            Fun.WriteLine(Un);
+                            FOks.WriteLine(Un);
+                            if (CheckBoxVal.IsChecked == true)
+                            {
+                                FOks.Close();
+                                n++;
+                                FOks = new StreamWriter(FileName + "_ОКС_" + n + ".txt");
+                                listBoxCreate.Items.Add(FileName + "_ОКС_" + n + ".txt");
+
+                            }
                             i = 0;
                         }
                         else
                         {
                             if (j == LUn.Count() - 1)
                             {
-                                Fun.Write(Un);
+                                FOks.Write(Un);
                             }
                             else
                             {
-                                Fun.Write(Un + ";");
-                            }                          
+                                FOks.Write(Un + ";");
+                            }
                         }
 
                         i++;
                         j++;
                     }
-                    Fun.Close();                    
-                }
-                if (LFlat.Count != 0)
-                {
-                    int i = 0;
-                    int j = 0;
-                    StreamWriter FFlat = new StreamWriter(FileName + "_КВ.txt");
-                    listBoxCreate.Items.Add(FileName + "_КВ.txt");
                     foreach (string Flat in LFlat)
                     {
                         if (i == 50)
                         {
-                            FFlat.WriteLine(Flat);
+                            FOks.WriteLine(Flat);
+                            if (CheckBoxVal.IsChecked == true)
+                            {
+                                FOks.Close();
+                                n++;
+                                FOks = new StreamWriter(FileName + "_ОКС_" + n + ".txt");
+                                listBoxCreate.Items.Add(FileName + "_ОКС_" + n + ".txt");
+
+                            }
                             i = 0;
                         }
                         else
                         {
                             if (j == LFlat.Count() - 1)
                             {
-                                FFlat.Write(Flat);
+                                FOks.Write(Flat);
                             }
                             else
                             {
-                                FFlat.Write(Flat + ";");
+                                FOks.Write(Flat + ";");
                             }
                         }
 
                         i++;
                         j++;
                     }
-                    FFlat.Close();
-                }
-                if (LCnst.Count != 0)
-                {
-                    int i = 0;
-                    int j = 0;
-                    StreamWriter FCnstr = new StreamWriter(FileName + "_СР.txt");
-                    listBoxCreate.Items.Add(FileName + "_СР.txt");
                     foreach (string Cnstr in LCnst)
                     {
                         if (i == 50)
                         {
-                            FCnstr.WriteLine(Cnstr);
+                            FOks.WriteLine(Cnstr);
+                            if (CheckBoxVal.IsChecked == true)
+                            {
+                                FOks.Close();
+                                n++;
+                                FOks = new StreamWriter(FileName + "_ОКС_" + n + ".txt");
+                                listBoxCreate.Items.Add(FileName + "_ОКС_" + n + ".txt");
+
+                            }
                             i = 0;
                         }
                         else
                         {
                             if (j == LCnst.Count() - 1)
                             {
-                                FCnstr.Write(Cnstr);
+                                FOks.Write(Cnstr);
                             }
                             else
                             {
-                                FCnstr.Write(Cnstr + ";");
+                                FOks.Write(Cnstr + ";");
                             }
                         }
 
                         i++;
                         j++;
                     }
-                    FCnstr.Close();
+
+                    FOks.Close();
+
                 }
 
                
@@ -354,6 +539,11 @@ namespace ParseCadNum
         private static string Replace(string input, IEnumerable<char> except)
         {
             return new string(input.Where(c => !except.Contains(c)).ToArray());
+        }
+
+        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxChange.Items.Clear();
         }
     }
 }
