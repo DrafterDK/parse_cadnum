@@ -1,20 +1,9 @@
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\ParseCadNum.exe.config
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\ParseCadNum.exe
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\ParseCadNum.pdb
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.csprojResolveAssemblyReference.cache
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\MainWindow.g.cs
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\App.g.cs
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum_MarkupCompile.cache
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum_MarkupCompile.lref
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\MainWindow.baml
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.g.resources
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.Properties.Resources.resources
 c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.csproj.GenerateResource.Cache
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.exe
-c:\users\владимир сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\ParseCadNum.pdb
-C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\System.Net.Http.dll
-C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\System.Net.Http.xml
-C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\ru\System.Net.Http.resources.dll
 C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\obj\Debug\ParseCadNum.csprojResolveAssemblyReference.cache
 C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\obj\Debug\MainWindow.g.cs
 C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\obj\Debug\App.g.cs
@@ -29,3 +18,18 @@ C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\obj\Debug\Разбор ка
 C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.g.resources
 C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.exe
 C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.pdb
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\Разбор кадастрового квартала.exe.config
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\Разбор кадастрового квартала.exe
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\Разбор кадастрового квартала.pdb
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\Разбор кадастрового квартала_MarkupCompile.cache
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\Разбор кадастрового квартала_MarkupCompile.lref
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.g.resources
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.exe
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.pdb
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\EPPlus.dll
+C:\Users\Владимир Сергеевич\documents\visual studio 2017\Projects\ParseCadNum\ParseCadNum\bin\Debug\EPPlus.xml
+C:\Users\Parus\Downloads\ParseCadNum\ParseCadNum\ParseCadNum\bin\Debug\Разбор кадастрового квартала.exe.config
+C:\Users\Parus\Downloads\ParseCadNum\ParseCadNum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.exe
+C:\Users\Parus\Downloads\ParseCadNum\ParseCadNum\ParseCadNum\obj\Debug\Разбор кадастрового квартала.pdb
+C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\bin\Debug\EPPlus.dll
+C:\Users\Parus\Source\Repos\parse_cadnum\ParseCadNum\bin\Debug\EPPlus.xml

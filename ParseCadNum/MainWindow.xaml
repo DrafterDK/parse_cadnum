@@ -17,13 +17,13 @@
 
         </GroupBox>
         <ListBox x:Name="listBoxChange" Margin="0,19,19,0" Height="144" VerticalAlignment="Top" HorizontalAlignment="Right" Width="385"/>
-        <ListBox x:Name="listBoxCreate" Height="121" Margin="152,0,0,33" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="385" Grid.Row="1" Grid.RowSpan="2"/>
+        <ListBox x:Name="listBoxCreate" Height="133" Margin="259,0,0,33" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="278" Grid.Row="1" Grid.RowSpan="2"/>
         <GroupBox Header="Результаты" HorizontalAlignment="Left" Height="187" Margin="10,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="536" Grid.RowSpan="2">
-            <Button x:Name="ButtonChangeFile_Copy" Content="Разобрать файлы..." Margin="10,50,400,52" Click="ButtonChangeFile_Copy_Click"/>
+            <Button x:Name="ButtonChangeFile_Copy" Content="Разобрать файлы..." Margin="10,101,357,0" Click="ButtonChangeFile_Copy_Click" Height="44" VerticalAlignment="Top" IsEnabled="False"/>
         </GroupBox>
         <Label x:Name="CountCad" Content="Label" HorizontalAlignment="Left" Margin="152,163,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="385" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Visibility="Hidden"/>
-        <CheckBox x:Name="CheckBoxDel" Content="Разделять на файлы" HorizontalAlignment="Left" Margin="20,66,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Button x:Name="ButtonClear" Content="" HorizontalAlignment="Left" Margin="506,167,0,0" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" ToolTip="Очистить список файлов" Height="29" Click="ButtonClear_Click">
+        <CheckBox x:Name="CheckBoxDel" Content="Разделять ОКС на файлы" HorizontalAlignment="Left" Margin="27,10,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonClear" Content="" HorizontalAlignment="Left" Margin="506,167,0,0" VerticalAlignment="Top" Width="31" ToolTip="Очистить список файлов" Height="29" Click="ButtonClear_Click" Grid.RowSpan="2">
             <Button.BorderBrush>
                 <ImageBrush ImageSource="Draft.ico" Stretch="Uniform"/>
             </Button.BorderBrush>
@@ -31,8 +31,14 @@
                 <ImageBrush ImageSource="Draft.ico" Stretch="Uniform" TileMode="Tile"/>
             </Button.Background>
         </Button>
-        <CheckBox x:Name="CheckBoxVal" Content="Не более 50 кадастровых номеров в одном файле" HorizontalAlignment="Left" Margin="20,43,0,0" Grid.Row="1" VerticalAlignment="Top" Height="18" Width="298"/>
         <Label Content="Developed by Vladimir Elagin" HorizontalAlignment="Left" Margin="347,82,0,0" Grid.Row="2" VerticalAlignment="Top" Width="190" FontFamily="Lucida Bright" FontWeight="Medium" FontStretch="SemiCondensed" FlowDirection="RightToLeft" Foreground="#FF8D8B8B" FontStyle="Italic"/>
+        <ComboBox x:Name="ComboBoxItem" HorizontalAlignment="Left" Margin="190,53,0,0" Grid.Row="1" VerticalAlignment="Top" Width="64" DataContextChanged="ComboBoxItem_DataContextChanged" SelectionChanged="ComboBoxItem_SelectionChanged" ContextMenuClosing="ComboBoxItem_ContextMenuClosing">
+            <ComboBoxItem Content="*.TXT" IsSelected="True"/>
+            <ComboBoxItem Content="*.CSV"/>
+        </ComboBox>
+        <Label Content="Получить файлы в формате:" HorizontalAlignment="Left" Margin="20,49,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextBoxCount" HorizontalAlignment="Left" Height="23" Margin="201,80,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Grid.RowSpan="2" KeyDown="TextBoxCount_KeyDown" TextChanged="TextBoxCount_TextChanged" MouseLeave="TextBoxCount_MouseLeave"/>
+        <Label Content="Максимальное число номеров:" HorizontalAlignment="Left" Margin="20,80,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Grid.RowSpan="2" ToolTip="Максимальное количество кадастровых номеров в одном файле."/>
 
 
     </Grid>

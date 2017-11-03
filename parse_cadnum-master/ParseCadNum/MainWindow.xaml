@@ -1,0 +1,39 @@
+﻿<Window x:Class="ParseCadNum.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParseCadNum"
+        mc:Ignorable="d"
+        Title="Разбор кадастрового квартала" Height="430.000" Width="565.000" Icon="application-xml.ico" MaxHeight="430" MaxWidth="565.000" MinHeight="430" MinWidth="565">
+    <Grid HorizontalAlignment="Left" Width="556" Margin="0,0,0,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="89*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Выбор файлов" HorizontalAlignment="Left" Height="201" Margin="10,0,0,0" VerticalAlignment="Top" Width="536" Grid.RowSpan="2">
+            <Button x:Name="ButtonChangeFile" Content="Выбрать файлы..." Margin="10,45,400,0" VerticalAlignment="Top" Height="65" Click="ButtonChangeFile_Click"/>
+
+        </GroupBox>
+        <ListBox x:Name="listBoxChange" Margin="0,19,19,0" Height="144" VerticalAlignment="Top" HorizontalAlignment="Right" Width="385"/>
+        <ListBox x:Name="listBoxCreate" Height="121" Margin="152,0,0,33" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="385" Grid.Row="1" Grid.RowSpan="2"/>
+        <GroupBox Header="Результаты" HorizontalAlignment="Left" Height="187" Margin="10,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="536" Grid.RowSpan="2">
+            <Button x:Name="ButtonChangeFile_Copy" Content="Разобрать файлы..." Margin="10,50,400,52" Click="ButtonChangeFile_Copy_Click"/>
+        </GroupBox>
+        <Label x:Name="CountCad" Content="Label" HorizontalAlignment="Left" Margin="152,163,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="385" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Visibility="Hidden"/>
+        <CheckBox x:Name="CheckBoxDel" Content="Разделять на файлы" HorizontalAlignment="Left" Margin="20,66,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonClear" Content="" HorizontalAlignment="Left" Margin="506,167,0,0" VerticalAlignment="Top" Width="31" Grid.RowSpan="2" ToolTip="Очистить список файлов" Height="29" Click="ButtonClear_Click">
+            <Button.BorderBrush>
+                <ImageBrush ImageSource="Draft.ico" Stretch="Uniform"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="Draft.ico" Stretch="Uniform" TileMode="Tile"/>
+            </Button.Background>
+        </Button>
+        <CheckBox x:Name="CheckBoxVal" Content="Не более 50 кадастровых номеров в одном файле" HorizontalAlignment="Left" Margin="20,43,0,0" Grid.Row="1" VerticalAlignment="Top" Height="18" Width="298"/>
+        <Label Content="Developed by Vladimir Elagin" HorizontalAlignment="Left" Margin="347,82,0,0" Grid.Row="2" VerticalAlignment="Top" Width="190" FontFamily="Lucida Bright" FontWeight="Medium" FontStretch="SemiCondensed" FlowDirection="RightToLeft" Foreground="#FF8D8B8B" FontStyle="Italic"/>
+
+
+    </Grid>
+</Window>
