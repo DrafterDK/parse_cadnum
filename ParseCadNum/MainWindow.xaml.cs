@@ -723,5 +723,32 @@ namespace ParseCadNum
         {
             
         }
+
+        private void ButtonFind_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBoxFind.Text.Trim() != null)
+            {
+                foreach (string name in listBoxChange.Items)
+                {
+                    StreamReader SR = new StreamReader(name);                   
+                    string line;
+                    while (!SR.EndOfStream)
+                    {
+                        line = SR.ReadLine();
+                        if (line.IndexOf(TextBoxFind.Text.Trim()) > -1)
+                        {
+                            MessageBox.Show("Тег найден в файле: "+ name,"Файл найден",MessageBoxButton.OK,MessageBoxImage.Information);
+                            return;
+                        }
+                        else
+                        {
+                            // Вхождения не найдены
+                        }
+                    }
+                    SR.Close();
+                }
+                MessageBox.Show("В указанном списке файлов нет указанного тега.","Файл не найден",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
+        }
     }
 }

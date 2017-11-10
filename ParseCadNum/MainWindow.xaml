@@ -13,7 +13,7 @@
             <RowDefinition Height="59*"/>
         </Grid.RowDefinitions>
         <GroupBox Header="Выбор файлов" HorizontalAlignment="Left" Height="201" Margin="10,0,0,0" VerticalAlignment="Top" Width="536" Grid.RowSpan="2">
-            <Button x:Name="ButtonChangeFile" Content="Выбрать файлы..." Margin="10,45,400,0" VerticalAlignment="Top" Height="65" Click="ButtonChangeFile_Click"/>
+            <Button x:Name="ButtonChangeFile" Content="Выбрать файлы..." Margin="10,10,400,0" VerticalAlignment="Top" Height="65" Click="ButtonChangeFile_Click"/>
 
         </GroupBox>
         <ListBox x:Name="listBoxChange" Margin="0,19,19,0" Height="144" VerticalAlignment="Top" HorizontalAlignment="Right" Width="385"/>
@@ -39,6 +39,8 @@
         <Label Content="Получить файлы в формате:" HorizontalAlignment="Left" Margin="20,49,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <TextBox x:Name="TextBoxCount" HorizontalAlignment="Left" Height="23" Margin="201,80,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="53" Grid.RowSpan="2" KeyDown="TextBoxCount_KeyDown" TextChanged="TextBoxCount_TextChanged" MouseLeave="TextBoxCount_MouseLeave"/>
         <Label Content="Максимальное число номеров:" HorizontalAlignment="Left" Margin="20,80,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Grid.RowSpan="2" ToolTip="Максимальное количество кадастровых номеров в одном файле."/>
+        <TextBox x:Name="TextBoxFind" HorizontalAlignment="Left" Height="23" Margin="27,117,0,0" TextWrapping="Wrap" Text="Тег для поиска" VerticalAlignment="Top" Width="110" ToolTip="Укажите тег, документ с которым вы хотите найти."/>
+        <Button x:Name="ButtonFind" Content="Поиск" HorizontalAlignment="Left" Margin="27,147,0,0" VerticalAlignment="Top" Width="110" ToolTip="Поиск документа с указанным тегом." Click="ButtonFind_Click"/>
 
 
     </Grid>
